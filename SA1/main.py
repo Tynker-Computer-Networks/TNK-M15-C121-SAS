@@ -51,6 +51,8 @@ def main():
                             try:
                                 with zipfile.ZipFile(folderpath, 'r') as zf:
                                     zf.extractall(pwd=guess)
+                                    # Decoding the guess string
+                                    guess = guess.decode('utf8').strip()
                                     result = 1  # Set result variable to 1 on success
                                     break  # If the password is found break from i for loop
                             except:
@@ -68,5 +70,8 @@ def main():
             print(message)
 
         else:
-            message = f"Congratulations!!! Password found after trying {attempts} combinations.\nThe password is {str(guess)}."
+            message = f"Congratulations!!! Password found after trying {attempts} combinations.\nThe password is {guess}."
             print(message)
+
+
+main()
