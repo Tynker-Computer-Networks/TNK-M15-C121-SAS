@@ -44,6 +44,7 @@ def main():
                         with zipfile.ZipFile(folderpath, 'r') as zf:
                             guess = guess.encode('utf8').strip()
                             zf.extractall(pwd=guess)
+                            guess = guess.decode('utf8').strip()
                             result = 1
                             break
                     except:
