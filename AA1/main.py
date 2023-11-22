@@ -45,6 +45,7 @@ def main():
                         with zipfile.ZipFile(folderpath, 'r') as zf:
                             guess = guess.encode('utf8').strip()
                             zf.extractall(pwd=guess)
+                            guess = guess.decode('utf8').strip()
                             result = 1
                             # Declare the variable starttime to store the programe ending time
                             endtime = time.time()
